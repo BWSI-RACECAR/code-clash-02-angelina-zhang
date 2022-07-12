@@ -29,22 +29,32 @@ Input: ary = [3,1,7] ; target = 4 ;         Output = [0,1]
 
 class Solution:
     def two_numbers(self, ary, target):
+        for s in ary:
+            other_num = target-s
+            if other_num in ary:
+                return [ary.index(s), ary.index(other_num)]
+        return False
+
         # type ary: list
         # type target: int
         # return type: list or bool
 
        # TODO: Write code below to return a list with the solution to the prompt
-        sum = 0
-        count_sums = 0
-        new_list = []
-        while (count_sums < (len(ary)-1)):
-            for i in range (0, len(ary)-1):
-                sum = ary[i]+ary[i+1]
-                count_sums +=1
-                if sum == target:
-                    new_list = new_list.append(i)
-                    new_list = new_list.append(i+1)
-                    return new_list
+
+       # sum = 0
+       # count_sums = 0
+        #new_list = [0,0]
+      #  print(type(new_list))
+       # while (count_sums < (len(ary)-1)):
+           # for i in range (0, len(ary)-1):
+            #    sum = ary[i]+ary[i+1]
+            #    count_sums +=1
+             #   if sum == target:
+              #      new_list.append(int(i))
+             #       new_list.append(int(i+1))
+              #      print(new_list)
+              #      return new_list
+
        
         return False
 
